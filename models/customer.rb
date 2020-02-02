@@ -52,8 +52,12 @@ class Customer
 
 
   def buy_tickets(film)
+    if @funds >= film.price
     @funds -= film.price
     return @funds
+    else
+      return "Insufficient funds!"
+    end
   end
 
   def bought_tickets_number()
