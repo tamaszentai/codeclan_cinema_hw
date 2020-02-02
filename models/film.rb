@@ -43,4 +43,9 @@ class Film
     results = customers.map {|customer| Customer.new(customer)}
     return results
   end
+
+  def viewing_number()
+    return customers.count
+  end
+
 end

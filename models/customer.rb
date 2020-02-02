@@ -1,5 +1,6 @@
 require('PG')
 require_relative('../db/sql_runner')
+require_relative('film')
 
 class Customer
 
@@ -44,4 +45,18 @@ class Customer
     return results
   end
 
+  ### Basic extensions:
+    # - Buying tickets should decrease the funds of the customer by the price
+    # - Check how many tickets were bought by a customer
+    # - Check how many customers are going to watch a certain film
+
+
+  def buy_tickets(film)
+    @funds -= film.price
+    return @funds
+  end
+
+  def bought_tickets_number()
+    return films.count
+  end
 end
